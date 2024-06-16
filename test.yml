@@ -5,8 +5,8 @@ program:
   architecture: "x86_64"
   system: "linux"
   build:
-    version: "1.0.0"
-    release: "testing"
+    version: "1.0.1"
+    release: "stable"
     license: "MIT"
     author:
       name: "AntiSecTech"
