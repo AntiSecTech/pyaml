@@ -83,11 +83,11 @@ sudo pacman -S gcc
 You can use the following line with extended rights to perform a fully automatic express installation.
 #### by using 'curl'
 ```sh
-curl -sSL https://gist.githubusercontent.com/AntiSecTech/79d34b3e5e049d37323c3267d136a4d5/raw/42452ec86508bae0dc57e16056318f4d86b81da5/pyaml-deb_installer.sh -o pyaml-installer.sh && chmod +x ./pyaml-installer.sh && sudo ./pyaml-installer.sh
+curl -sSL https://gist.githubusercontent.com/AntiSecTech/79d34b3e5e049d37323c3267d136a4d5/raw/7bcfb55ff2b186f3d960eb7366497fc4025cd532/pyaml-deb_installer.sh -o pyaml-installer.sh && chmod +x ./pyaml-installer.sh && sudo ./pyaml-installer.sh
 ```
 #### by using 'wget'
 ```sh
-wget -q https://gist.githubusercontent.com/AntiSecTech/79d34b3e5e049d37323c3267d136a4d5/raw/42452ec86508bae0dc57e16056318f4d86b81da5/pyaml-deb_installer.sh -O pyaml-installer.sh && chmod +x ./pyaml-installer.sh && sudo ./pyaml-installer.sh
+wget -q https://gist.githubusercontent.com/AntiSecTech/79d34b3e5e049d37323c3267d136a4d5/raw/7bcfb55ff2b186f3d960eb7366497fc4025cd532/pyaml-deb_installer.sh -O pyaml-installer.sh && chmod +x ./pyaml-installer.sh && sudo ./pyaml-installer.sh
 ```
 or take the following steps for the classic route
 ### Clone the repository:
