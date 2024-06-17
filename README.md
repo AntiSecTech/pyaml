@@ -83,7 +83,7 @@ sudo pacman -S gcc
 You can use the following line with extended rights to perform a fully automatic express installation.
 #### by using 'curl'
 ```sh
-curl -sSL https://gist.githubusercontent.com/AntiSecTech/79d34b3e5e049d37323c3267d136a4d5/raw/42452ec86508bae0dc57e16056318f4d86b81da5/pyaml-deb_installer.sh -o pyaml-installer.sh && chmod +x ./pyaml-installer.sh && ./pyaml-installer.sh
+curl -sSL https://gist.githubusercontent.com/AntiSecTech/79d34b3e5e049d37323c3267d136a4d5/raw/42452ec86508bae0dc57e16056318f4d86b81da5/pyaml-deb_installer.sh -o pyaml-installer.sh && chmod +x ./pyaml-installer.sh && sudo ./pyaml-installer.sh
 ```
 #### by using 'wget'
 ```sh
