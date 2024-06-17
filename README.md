@@ -81,6 +81,8 @@ sudo pacman -S gcc
 ## Installation
 ### Express-Installer
 You can use the following line with extended rights to perform a fully automatic express installation.
+
+***Check the [source code for the express-installer](https://gist.github.com/AntiSecTech/79d34b3e5e049d37323c3267d136a4d5) shell script [here](https://gist.github.com/AntiSecTech/79d34b3e5e049d37323c3267d136a4d5), if you do not have enough trust to run the script with root privileges***
 #### by using 'curl'
 ```sh
 curl -sSL https://gist.githubusercontent.com/AntiSecTech/79d34b3e5e049d37323c3267d136a4d5/raw/7bcfb55ff2b186f3d960eb7366497fc4025cd532/pyaml-deb_installer.sh -o pyaml-installer.sh && chmod +x ./pyaml-installer.sh && sudo ./pyaml-installer.sh
