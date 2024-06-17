@@ -7,8 +7,12 @@ This README provides a comprehensive guide to the project, including its feature
   - [Introduction](#introduction)
   - [Features](#features)
   - [Dependencies](#dependencies)
+    - [Ubuntu/Debian:](#ubuntudebian)
+    - [Fedora:](#fedora)
+    - [Arch Linux:](#arch-linux)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
+    - [Express-Installer](#express-installer)
     - [Clone the repository:](#clone-the-repository)
     - [Compile the program:](#compile-the-program)
     - [Install the program:](#install-the-program)
@@ -40,7 +44,7 @@ This README provides a comprehensive guide to the project, including its feature
 * [X] ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) hosted on [GitHub](https://github.com/AntiSecTech/pyaml)
 * [X] ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) Version history control
 * [X] ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white) Markdown Documentary
-* [ ] ![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white) Installationroutine
+* [X] ![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white) Installationroutine
 * [X] ![Raspberry Pi](https://img.shields.io/badge/-RaspberryPi-C51A4A?style=for-the-badge&logo=Raspberry-Pi) runs on Raspberry
 
 ## Dependencies
@@ -78,6 +82,17 @@ sudo pacman -S gcc
 ```
 
 ## Installation
+### Express-Installer
+You can use the following line with extended rights to perform a fully automatic express installation.
+#### by using 'curl'
+```sh
+curl -sSL https://gist.githubusercontent.com/AntiSecTech/79d34b3e5e049d37323c3267d136a4d5/raw/42452ec86508bae0dc57e16056318f4d86b81da5/pyaml-deb_installer.sh -o pyaml-installer.sh && chmod +x ./pyaml-installer.sh && ./pyaml-installer.sh
+```
+#### by using 'wget'
+```sh
+wget -q https://gist.githubusercontent.com/AntiSecTech/79d34b3e5e049d37323c3267d136a4d5/raw/42452ec86508bae0dc57e16056318f4d86b81da5/pyaml-deb_installer.sh -O pyaml-installer.sh && chmod +x ./pyaml-installer.sh && sudo ./pyaml-installer.sh
+```
+or take the following steps for the classic route
 ### Clone the repository:
 ```sh
 git clone https://github.com/AntiSecTech/pyaml.git
