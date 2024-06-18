@@ -32,9 +32,9 @@ schemes:
     separator: "darkgray"
     value: "darkblue"
   dark-github:
-    keyword: "lightblue"
+    keyword: "lightgreen"
     separator: "white"
-    value: "lightgreen"
+    value: "lightblue"
   custom:
     keyword: "blue"
     separator: "orange"
