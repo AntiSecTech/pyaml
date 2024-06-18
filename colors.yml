@@ -1,0 +1,33 @@
+schemes:
+  default:
+    keyword: "green"
+    separator: "gray"
+    value: "red"
+  dark:
+    keyword: "darkgray"
+    separator: "white"
+    value: "gray"
+  light:
+    keyword: "lightgray"
+    separator: "yellow"
+    value: "white"
+  cyan:
+    keyword: "lightblue"
+    separator: "yellow"
+    value: "cyan"
+  coder:
+    keyword: "blue"
+    separator: "darkgray"
+    value: "orange"
+  hacker:
+    keyword: "green"
+    separator: "green"
+    value: "green"
+  vampire:
+    keyword: "darkred"
+    separator: "darkgray"
+    value: "red"
+  custom:
+    keyword: "blue"
+    separator: "orange"
+    value: "lightblue"
