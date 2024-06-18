@@ -2,11 +2,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include <yaml.h>
+#include <unistd.h>
 
 #define VERSION "1.0.1"
 
 void print_usage(const char *program_name) {
-    printf("Usage: %s <file.yaml> <key>\n", program_name);
+    printf("Usage: %s <file.yaml> [key]\n", program_name);
     printf("       %s -h | --help\n", program_name);
 }
 
@@ -19,7 +20,7 @@ void print_version_long() {
 }
 
 void print_help(const char *program_name) {
-    printf("Usage: %s <file.yaml> <key>\n", program_name);
+    printf("Usage: %s <file.yaml> [key]\n", program_name);
     printf("       %s -h | --help\n", program_name);
     printf("\n");
     printf("Options:\n");
@@ -41,7 +42,7 @@ void print_help(const char *program_name) {
     printf("  %s config.yml program.name | another_program\n", program_name);
     printf("\n");
     printf("Note:\n");
-    printf("  When specifying <key>, use dot notation for nested keys.\n");
+    printf("  When specifying [key], use dot notation for nested keys.\n");
     printf("  Please note that the spelling is case-sensitive!\n");
     printf("  For example, to access 'build.version' in the YAML file:\n");
     printf("    %s test.yml program.build.version\n", program_name);
@@ -132,6 +133,12 @@ void parse_yaml(const char *filename, const char *key) {
     fclose(fh);
 }
 
+void highlight_yaml(const char *filename) {
+    char command[256];
+    snprintf(command, sizeof(command), "pygmentize -l yaml %s | less -R", filename);
+    system(command);
+}
+
 int main(int argc, char *argv[]) {
     if (argc < 2) {
         print_usage(argv[0]);
@@ -156,14 +163,13 @@ int main(int argc, char *argv[]) {
         return EXIT_SUCCESS;
     }
 
-    if (argc != 3) {
-        print_usage(argv[0]);
-        return EXIT_FAILURE;
+    const char *filename = argv[1];
+    if (argc == 2) {
+        highlight_yaml(filename);
+        return EXIT_SUCCESS;
     }
 
-    const char *filename = argv[1];
     const char *key = argv[2];
-
     parse_yaml(filename, key);
 
     return EXIT_SUCCESS;
