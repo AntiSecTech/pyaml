@@ -27,6 +27,14 @@ schemes:
     keyword: "darkred"
     separator: "darkgray"
     value: "red"
+  github:
+    keyword: "blue"
+    separator: "darkgray"
+    value: "darkblue"
+  dark-github:
+    keyword: "lightblue"
+    separator: "white"
+    value: "lightgreen"
   custom:
     keyword: "blue"
     separator: "orange"
