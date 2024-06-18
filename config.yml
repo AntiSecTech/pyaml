@@ -1,0 +1,15 @@
+program:
+  name: "pyaml"
+  type: "parser"
+  language: "C"
+  architecture: "x86_64"
+  system: "linux"
+  build:
+    version: "1.1.0"
+    release: "experimental"
+    license: "MIT"
+  author:
+    name: "AntiSecTech"
+    contact: "contact.antisec@pm.me"
+  config:
+    sheme: "default"
