@@ -32,7 +32,7 @@ This branch is used to develop the implementation of new functions.
 ./pyaml config.yml -v
 ```
 ```sh
-./pyaml config.yml -v
+./pyaml config.yml --version
 ```
 ---
 
