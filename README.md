@@ -1,4 +1,4 @@
-# pyaml - Version 1.1.0 - EXPERIMENTAL
+# pyaml - Version 1.1.1 - EXPERIMENTAL
 
 This branch is used to develop the implementation of new functions.
 
@@ -8,17 +8,33 @@ This branch is used to develop the implementation of new functions.
 -  [X] Attempts to implement syntax highlighting for displaying the content
 -  [x] Configuration file created for various color themes
 -  [x] Configuration file created for implementation in pyaml
--  [ ] Implementing and processing the configuration file in pyaml
+-  [X] Implementing and processing the configuration file in pyaml
 -  [ ] selectable color themes
 
 ## some tests
 ```sh
 ./pyaml test.yml
 ```
+```sh
+./pyaml config.yml
+```
+---
 
 ```sh
 ./pyaml test.yml main-key.keyword
 ```
+```sh
+./pyaml config.yml author.contact
+```
+---
+
+```sh
+./pyaml config.yml -v
+```
+```sh
+./pyaml config.yml -v
+```
+---
 
 ```sh
 ./pyaml test.yml main-key.sub-key.inner-sub-keyword
