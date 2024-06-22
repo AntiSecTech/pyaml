@@ -1,13 +1,8 @@
-program:
-  name: "pyaml"
-  type: "parser"
-  language: "C"
-  architecture: "x86_64"
-  system: "linux"
-  build:
-    version: "1.0.1"
-    release: "stable"
-    license: "MIT"
-    author:
-      name: "AntiSecTech"
-      contact: "contact.antisec@pm.me"
+main-key:
+  keyword: "value"
+  sub-key:
+    inner-sub-keyword: "value"
+next-key:
+  keyword: "another-value"
+  inner-sub-key:
+    keyword: "nested values"
