@@ -4,8 +4,8 @@
   architecture: "x86_64"
   system: "linux"
   build:
-    version: "1.1.1"
-    release: "experimental"
+    version: "1.0.2"
+    release: "alpha"
     license: "MIT"
   author:
     name: "AntiSecTech"

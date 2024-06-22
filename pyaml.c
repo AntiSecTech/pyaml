@@ -7,37 +7,33 @@
 #define CONFIG_FILE "config.yml"
 
 void print_usage(const char *program_name) {
-    printf("Usage: %s <file.yaml> [key]\n", program_name);
-    printf("       %s -h | --help\n", program_name);
+    printf("Usage: %s <file.yaml> [<key>] | [ -h | --help ] | [ -v | --version ]\n", program_name);
 }
 
 void print_help(const char *program_name) {
     printf("Usage: %s <file.yaml> [key]\n", program_name);
-    printf("       %s -h | --help\n", program_name);
     printf("\n");
     printf("Options:\n");
     printf("  -v, --version   Show the program version\n");
     printf("  -h, --help      Show this help message\n");
     printf("\n");
     printf("Examples:\n");
-    printf("  %s config.yml program.name\n", program_name);
-    printf("  %s -v\n", program_name);
-    printf("  %s --version\n", program_name);
-    printf("  %s -h\n", program_name);
-    printf("  %s --help\n", program_name);
+    printf("  %s file.yml\n", program_name);
+	printf("  %s file.yml keyword\n", program_name);
     printf("\n");
     printf("To integrate with a Bash script:\n");
     printf("  server_port=$(%s config.yml server.port)\n", program_name);
     printf("  echo $server_port\n");
     printf("\n");
     printf("To pipe the output to another program:\n");
-    printf("  %s config.yml program.name | another_program\n", program_name);
+    printf("  %s config.yml mainkey.subkey.nestedkey | another_program\n", program_name);
     printf("\n");
     printf("Note:\n");
     printf("  When specifying [key], use dot notation for nested keys.\n");
     printf("  Please note that the spelling is case-sensitive!\n");
-    printf("  For example, to access 'build.version' in the YAML file:\n");
-    printf("    %s test.yml program.build.version\n", program_name);
+    printf("  For example, to access 'Version' in the YAML file:\n");
+    printf("    %s config.yml build.version\n", program_name);
+    printf("  If you do not specify [key], only the file content of [file.yaml] will be output.\n");
 }
 
 void parse_yaml(const char *filename, const char *key) {
