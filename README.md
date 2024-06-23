@@ -288,6 +288,7 @@ After editing the configuration file, the new color scheme will be applied autom
  - default
  - emacs
  - monokai
+
 For a full list of available styles, you can use the following command:
 ```sh
 pygmentize -L styles
