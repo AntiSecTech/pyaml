@@ -97,6 +97,7 @@ sudo dnf install libyaml-devel
 sudo pacman -S libyaml
 ```
 
+---
 In addition, **pyaml** uses the Python program `pygmentize` to output the file content with syntax highlighting.
 Make sure that `pygmentize` is available on your system.
 It can be installed as follows:
