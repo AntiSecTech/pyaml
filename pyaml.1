@@ -1,0 +1,82 @@
+.TH pyaml 1 "June 2024" "pyaml man page"
+
+.SH NAME
+pyaml \- parse YAML files and retrieve values based on keys
+
+.SH SYNOPSIS
+.B pyaml
+[\fIfile.yml\fR [\fIkey\fR]] \|| [\fB-h\fR \|| \fB-v\fR]
+
+.SH DESCRIPTION
+\fBpyaml\fR is a command-line tool written in C that parses YAML files and extracts values based on specific keys.
+It supports syntax highlighting for YAML content using \fBpygmentize\fR.
+
+.SH OPTIONS
+The following options are supported:
+
+.TP
+.B \-v, \-\-version
+Display version information.
+
+.TP
+.B \-h, \-\-help
+Display help information.
+
+.SH EXAMPLES
+Displays the content of the YAML file with syntax highlighting:
+
+.TP
+.B pyaml \fItest.yml\fR
+Displays the content of '\fItest.yml\fR'.
+
+.TP
+Extract values from YAML files:
+
+.TP
+.B pyaml \fItest.yml main-key.keyword\fR
+Extracts the value associated with '\fBmain-key.keyword\fR' in '\fItest.yml\fR'.
+
+.TP
+.B pyaml \fItest.yml next-key.keyword\fR
+Extracts the value associated with '\fBnext-key.keyword\fR' in '\fItest.yml\fR'.
+
+.TP
+.B pyaml \fItest.yml next-key.inner-sub-key.keyword\fR
+Extracts the value associated with '\fBnext-key.inner-sub-key.keyword\fR' in '\fItest.yml\fR'.
+
+.SH CUSTOMIZE
+The program utilizes \fBpygmentize\fR to provide syntax highlighting for YAML files.
+By default, it uses the color scheme specified in the \fIconfig.yml\fR file.
+However, users can customize the color scheme by modifying this configuration file.
+
+.SH COLOR SCHEMES
+\fBPygments\fR offers a variety of color schemes. Popular options include:
+
+.TP
+.I default
+.TP
+.I emacs
+.TP
+.I monokai
+
+.TP
+For a complete list of available styles, you can use the following command:
+.TP
+.BR pygmentize \ -L \ \fIstyles\fR
+
+.SH BUGS
+There are no known bugs in this program. If you find any bugs, please report them to the GitHub repository at <https://github.com/AntiSecTech/pyaml/issues>.
+
+.SH AUTHOR
+\fBpyaml\fR was written by \fIAntiSecTech\fR <contact.antisec@pm.me>.
+
+.SH COPYRIGHT
+\fBpyaml\fR is licensed under the \fBMIT License\fR. See the \fILICENSE\fR file for more details.
+
+.SH SEE ALSO
+README.md,
+libyaml(3),
+pygmentize(1), pygments(7)
+
+.SH HISTORY
+Refer to the changelog at <https://github.com/AntiSecTech/pyaml/blob/main/CHANGELOG.md> for detailed version history.

@@ -45,9 +45,11 @@ Initial commit, project created
 ##### added - 2024-06-23
 - [X] README.md updated
 - [X] pyaml.c updated
+- [X] Issue [#2](https://github.com/AntiSecTech/pyaml/issues/2)
 
  - Installation of the function for reading and applying color schemes.
  - Updating `README.md`, added the `Customize` section.
+ - Updating `Makefile`, added Manpage in `install` section.
 
 ##### removed - 2024-06-23
  - `colors.yml` deleted.

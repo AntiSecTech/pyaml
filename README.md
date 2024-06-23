@@ -199,7 +199,7 @@ sudo make uninstall
 
 The following options are available to help you use pyaml.
 - [X] Buildin documentation
-- [ ] Manpage ( [issue](https://github.com/AntiSecTech/pyaml/issues/2)  )
+- [X] Manpage ( [issue #2](https://github.com/AntiSecTech/pyaml/issues/2)  )
 - [X] Online documentation on [`github.com`](https://github.com/AntiSecTech/pyaml/blob/main/README.md)
 - [ ] Online documentation on [`readthedocs.com`](https://pyaml.readthedocs.io/)
 
@@ -228,7 +228,7 @@ The following options are available to help you use pyaml.
 
 **Manpage**
 
- - This function is **not yet** available!
+To open the manual, use the following command:
 ```sh
    man pyaml
 ```
