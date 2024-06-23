@@ -19,7 +19,7 @@ void print_help(const char *program_name) {
     printf("\n");
     printf("Examples:\n");
     printf("  %s file.yml\n", program_name);
-	printf("  %s file.yml keyword\n", program_name);
+    printf("  %s file.yml keyword\n", program_name);
     printf("\n");
     printf("To integrate with a Bash script:\n");
     printf("  server_port=$(%s config.yml server.port)\n", program_name);
@@ -34,6 +34,54 @@ void print_help(const char *program_name) {
     printf("  For example, to access 'Version' in the YAML file:\n");
     printf("    %s config.yml build.version\n", program_name);
     printf("  If you do not specify [key], only the file content of [file.yaml] will be output.\n");
+}
+
+char* read_theme_from_config(const char* config_file) {
+    FILE *file = fopen(config_file, "r");
+    if (!file) {
+        perror("Failed to open config file");
+        return NULL;
+    }
+
+    yaml_parser_t parser;
+    yaml_event_t event;
+    char *theme = NULL;
+
+    if (!yaml_parser_initialize(&parser)) {
+        fputs("Failed to initialize parser!\n", stderr);
+        fclose(file);
+        return NULL;
+    }
+
+    yaml_parser_set_input_file(&parser, file);
+
+    while (1) {
+        if (!yaml_parser_parse(&parser, &event)) {
+            fprintf(stderr, "Parser error %d\n", parser.error);
+            break;
+        }
+
+        if (event.type == YAML_SCALAR_EVENT) {
+            if (strcmp((char*)event.data.scalar.value, "sheme") == 0) {
+                if (!yaml_parser_parse(&parser, &event)) {
+                    fprintf(stderr, "Parser error %d\n", parser.error);
+                    break;
+                }
+                theme = strdup((char*)event.data.scalar.value);
+                break;
+            }
+        }
+
+        if (event.type == YAML_STREAM_END_EVENT) break;
+
+        yaml_event_delete(&event);
+    }
+
+    yaml_event_delete(&event);
+    yaml_parser_delete(&parser);
+    fclose(file);
+
+    return theme;
 }
 
 void parse_yaml(const char *filename, const char *key) {
@@ -121,9 +169,9 @@ void parse_yaml(const char *filename, const char *key) {
     fclose(fh);
 }
 
-void highlight_yaml(const char *filename) {
+void highlight_yaml(const char *filename, const char *theme) {
     char command[256];
-    snprintf(command, sizeof(command), "pygmentize -l yaml %s | less -R", filename);
+    snprintf(command, sizeof(command), "pygmentize -f terminal256 -O style=%s -l yaml %s | less -R", theme, filename);
     system(command);
 }
 
@@ -400,7 +448,13 @@ int main(int argc, char *argv[]) {
 
     const char *filename = argv[1];
     if (argc == 2) {
-        highlight_yaml(filename);
+        char *theme = read_theme_from_config(CONFIG_FILE);
+        if (theme) {
+            highlight_yaml(filename, theme);
+            free(theme);
+        } else {
+            highlight_yaml(filename, "default");
+        }
         return EXIT_SUCCESS;
     }
 

@@ -33,6 +33,25 @@ Initial commit, project created
 - privellegies issue in express-installer fixed
 ---
 
+### Version 1.0.2-alpha stable - 2024-06-22
+#### ***latest*** `main`
+- [X] README.md updated
+
+##### added
+ - merged the `experimental` branch into `main` branch.
+   - including `exp-features` v1.0.1-aplha and v1.1.1-alpha.
+     For details view the `unreleased` section.
+
+##### added - 2024-06-23
+- [X] README.md updated
+- [X] pyaml.c updated
+
+ - Installation of the function for reading and applying color schemes.
+ - Updating `README.md`, added the `Customize` section.
+
+##### removed - 2024-06-23
+ - `colors.yml` deleted.
+
 ## Unreleased
 ---
 

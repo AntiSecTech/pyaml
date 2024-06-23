@@ -28,6 +28,8 @@ This README provides a comprehensive guide to the project, including its feature
   - [Usage](#usage)
   - [Help](#help)
   - [Files](#files)
+  - [Customize](#customize)
+    - [Color Shemes](#color-shemes)
   - [Examples](#examples)
   - [Advantages](#advantages)
   - [License](#license)
@@ -53,6 +55,7 @@ It also shows you the contents of your `YAML` files with syntax highlighting if 
 - Parse YAML files.
 - Retrieve nested values using dot notation for keys.
 - **Syntax highlighting** file content.
+- **Changeable color themes** for syntax highlighting.
 
 * [X] supports the nested structure of embedded keywords
 * [X] distinguishes in the spelling of the keywords
@@ -92,6 +95,13 @@ sudo dnf install libyaml-devel
 
 ```sh
 sudo pacman -S libyaml
+```
+
+In addition, **pyaml** uses the Python program `pygmentize` to output the file content with syntax highlighting.
+Make sure that `pygmentize` is available on your system.
+It can be installed as follows:
+```sh
+pip install Pygments
 ```
 
 ---
@@ -249,6 +259,39 @@ Here you will find a small overview of the files used and their locations.
 | config.yml | yaml | ./pyaml | ~/.config/pyaml | configuration |
 
 > **Note** at the current time it may be that some of the listed files are not yet available or used. It is also possible that they can be found under a different path.
+
+---
+^ [UP to Index](#table-of-contents)
+## Customize
+
+The program utilizes `pygmentize` to provide syntax highlighting for YAML files.
+By default, it uses the color scheme specified in the `config.yml` file.
+However, users can customize the color scheme by modifying this configuration file.
+
+Open the `config.yml` file located in the same directory as the program. 
+Locate the **sheme** field under the `config` section.
+Change its value to your desired Pygments color scheme.
+```yaml
+config:
+  sheme: "default"
+```
+For example, you can change the color scheme to `monokai`:
+```yaml
+config:
+  sheme: "monokai"
+```
+After editing the configuration file, the new color scheme will be applied automatically.
+
+### Color Schemes
+
+`Pygments` offers a wide variety of color schemes. Some popular options include:
+ - default
+ - emacs
+ - monokai
+For a full list of available styles, you can use the following command:
+```sh
+pygmentize -L styles
+```
 
 ---
 ^ [UP to Index](#table-of-contents)
