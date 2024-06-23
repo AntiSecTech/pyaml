@@ -29,7 +29,7 @@ This README provides a comprehensive guide to the project, including its feature
   - [Help](#help)
   - [Files](#files)
   - [Customize](#customize)
-    - [Color Shemes](#color-shemes)
+    - [Color Schemes](#color-schemes)
   - [Examples](#examples)
   - [Advantages](#advantages)
   - [License](#license)
