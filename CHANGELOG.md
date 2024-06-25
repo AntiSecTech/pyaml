@@ -43,7 +43,7 @@ Initial commit, project created
      For details view the `unreleased` section.
 
 ##### fixed - 2024-06-25
-- [X] Issue [#3](https://github.com/AntiSecTech/pyaml/issues/3)
+- [X] Issue [#4](https://github.com/AntiSecTech/pyaml/issues/4)
 
 ##### added - 2024-06-23
 - [X] README.md updated
