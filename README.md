@@ -172,6 +172,11 @@ make compile
 sudo make install
 ```
 
+If you do not install the program and only compile the binary, you must **create a link for the configuration file** so that it can be read by the binary
+```sh
+sudo ln -s -r pyaml.yml /etc
+```
+
 If you have any further questions about the `Make` process, please refer to the source code of the [`Makefile`](https://github.com/AntiSecTech/pyaml/blob/main/Makefile).
 
 ---
@@ -257,7 +262,7 @@ Here you will find a small overview of the files used and their locations.
 | pyaml | binary | ./pyaml | /usr/local/bin | executable binary |
 | pyaml.c | plaintext | ./pyaml | | source code |
 | pyaml.1 | groff | ./pyaml | /usr/share/man/man1 | documentation |
-| config.yml | yaml | ./pyaml | ~/.config/pyaml | configuration |
+| pyaml.yml | yaml | ./pyaml | /etc | configuration |
 
 > **Note** at the current time it may be that some of the listed files are not yet available or used. It is also possible that they can be found under a different path.
 
@@ -266,10 +271,10 @@ Here you will find a small overview of the files used and their locations.
 ## Customize
 
 The program utilizes `pygmentize` to provide syntax highlighting for YAML files.
-By default, it uses the color scheme specified in the `config.yml` file.
+By default, it uses the color scheme specified in the `pyaml.yml` file.
 However, users can customize the color scheme by modifying this configuration file.
 
-Open the `config.yml` file located in the same directory as the program. 
+Open the `pyaml.yml` file located in the same directory as the program. 
 Locate the **sheme** field under the `config` section.
 Change its value to your desired Pygments color scheme.
 ```yaml
