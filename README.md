@@ -275,16 +275,16 @@ By default, it uses the color scheme specified in the `pyaml.yml` file.
 However, users can customize the color scheme by modifying this configuration file.
 
 Open the `pyaml.yml` file located in the same directory as the program. 
-Locate the **sheme** field under the `config` section.
+Locate the **scheme** field under the `config` section.
 Change its value to your desired Pygments color scheme.
 ```yaml
 config:
-  sheme: "default"
+  scheme: "default"
 ```
 For example, you can change the color scheme to `monokai`:
 ```yaml
 config:
-  sheme: "monokai"
+  scheme: "monokai"
 ```
 After editing the configuration file, the new color scheme will be applied automatically.
 
