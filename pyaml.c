@@ -4,7 +4,8 @@
 #include <yaml.h>
 #include <unistd.h>
 
-#define CONFIG_FILE "config.yml"
+#define CONFIG_FILE "/etc/pyaml.yml"
+#define DEFAULT_THEME "monokai"
 
 void print_usage(const char *program_name) {
     printf("Usage: %s <file.yaml> [<key>] | [ -h | --help ] | [ -v | --version ]\n", program_name);
@@ -62,7 +63,7 @@ char* read_theme_from_config(const char* config_file) {
         }
 
         if (event.type == YAML_SCALAR_EVENT) {
-            if (strcmp((char*)event.data.scalar.value, "sheme") == 0) {
+            if (strcmp((char*)event.data.scalar.value, "scheme") == 0) {
                 if (!yaml_parser_parse(&parser, &event)) {
                     fprintf(stderr, "Parser error %d\n", parser.error);
                     break;
@@ -453,7 +454,7 @@ int main(int argc, char *argv[]) {
             highlight_yaml(filename, theme);
             free(theme);
         } else {
-            highlight_yaml(filename, "default");
+            highlight_yaml(filename, DEFAULT_THEME);
         }
         return EXIT_SUCCESS;
     }

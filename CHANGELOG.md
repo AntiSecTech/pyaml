@@ -42,6 +42,9 @@ Initial commit, project created
    - including `exp-features` v1.0.1-aplha and v1.1.1-alpha.
      For details view the `unreleased` section.
 
+##### fixed - 2024-06-25
+- [X] Issue [#3](https://github.com/AntiSecTech/pyaml/issues/3)
+
 ##### added - 2024-06-23
 - [X] README.md updated
 - [X] pyaml.c updated
