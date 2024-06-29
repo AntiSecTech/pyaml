@@ -172,7 +172,7 @@ make compile
 sudo make install
 ```
 
-If you do not install the program and only compile the binary, you must **create a link for the configuration file** so that it can be read by the binary
+If you do not install the program and only compile the shared library, you must **create a link for the configuration file** so that it can be read by the binary
 ```sh
 sudo ln -s -r pyaml.yml /etc
 ```
@@ -226,10 +226,10 @@ The following options are available to help you use pyaml.
 | man | pyaml | | | displays the **pyaml** manpage in `groff` format |
 | --- | --- | --- | --- | --- |
 | make | | | | has the same effect as ``make all`` |
-| make | all \| compile | | | Compiles the program from the source code and generates the executable binary file |
-| make | clean | | | removes only the executable binary file recursively |
-| **sudo** make | install | | | Compiles the program from the source code and creates the executable binary file which is then copied to the local folder for binary files |
-| **sudo** make | uninstall | | | only removes the executable binary file from the local folder for binary files recursively |
+| make | all \| compile | | | Compiles the program from the source code and generates the executable file |
+| make | clean | | | removes only the executable file recursively |
+| **sudo** make | install | | | Compiles the program from the source code and creates the executable file which is then copied to the local folder for binary files |
+| **sudo** make | uninstall | | | only removes the executable file from the local folder for binary files recursively |
 
 **Manpage**
 
@@ -259,7 +259,7 @@ https://pyaml.readthedocs.io/
 Here you will find a small overview of the files used and their locations.
 |filename|filetype|project path|install path|description|
 |---|---|---|---|---|
-| pyaml | binary | ./pyaml | /usr/local/bin | executable binary |
+| pyaml | shared library | ./pyaml | /usr/local/bin | executable |
 | pyaml.c | plaintext | ./pyaml | | source code |
 | pyaml.1 | groff | ./pyaml | /usr/share/man/man1 | documentation |
 | pyaml.yml | yaml | ./pyaml | /etc | configuration |
